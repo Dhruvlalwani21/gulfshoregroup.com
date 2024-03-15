@@ -1,0 +1,8 @@
+{
+    "require": {
+        "troydavisson/phrets": "^2.6",
+        "sendgrid/sendgrid": "^7.9",
+        "facebook/php-sdk": "^3.2",
+        "guzzlehttp/guzzle": "7.2.0"
+    }
+}
