@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body{
+    background-color: aliceblue;
+}
+
+
+nav{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 7px 15px;
+}
+nav .tabs ul{
+    display: flex;
+    list-style: none;
+
+    li{
+        margin: 0px 15px;
+        font-size: 16px;
+        font-family: "Poppins",sans-serif;
+    }
+}
+nav .icons {
+    display: flex;
+    font-size: 20px;
+    padding: 15px 15px;
+}
+nav .brand{
+    margin-bottom: 7px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+
+.sec-title{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 500;
+    font-family: "Poppins" ,sans-serif;
+}
+
+
+.footer{
+    padding: 10px 0px;
+    background-color: #131313;
+    display: flex;
+    justify-content: space-around;
+}
+.footer .brand{
+    color: #ffffffc4;
+}
+.footer ul{
+    padding-left: 0px;
+    list-style: none;
+    li{
+        margin: 7px ;
+    }
+}
+
+.footer {
+    padding-top: 15px;
+    color: white;
+    span{
+        font-weight: 600;
+        font-size: 18px;
+    }
+}
+.footer .cities{
+    ul{
+        padding-left: 0px;
+      columns: 2;
+      column-gap: 20px;
+      align-items: start;
+      justify-content: left;
+    }
+
+}
+.cities span{
+    font-weight: 600;
+    font-size: 18px;
+}
+.footer .cities ul li{
+    margin-bottom: 7px;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+.footer a{
+    color: #ffffffc4;
+    font-family: "Poppins",sans-serif;
+    text-decoration: none;
+}
+
+.footer input{
+    margin-left: -4px;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 15px;
+    font-size: 18px;
+}
+.footer .input-email{
+    align-items: center;
+    border: 3px solid white;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+.footer .input-email button{
+    width: 45px!important;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+   border-top-left-radius: 0px;
+   border-bottom-left-radius: 0px;
+}
+
+
+.propertypage{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+
+
+    .gallery{
+        margin-top: 25px;
+      width: 90vh;
+      justify-content: center;
+
+      img{
+        object-fit: contain;
+        height: 400px;
+      }
+    }
+}
+.property.card{
+    padding: 10px 20px;
+    width:800px;
+   
+}
+
+.icons-row{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.icon-tab{
+    border-radius: 50px;
+    background-color: rgba(204, 204, 204, 0.288);
+    padding: 7px 10px;
+    margin: 5px;
+span{
+    font-size: 14px;
+    font-family: "Poppins" ,sans-serif;
+    margin-left: 3px;
+}
+}
+
+
+
+
+/*
+Gallery Css
+*/
+
+
+.cities.gallery{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: scroll;
+}
+.cities.gallery::-webkit-scrollbar{
+    display: none;
+}
+.city-img{
+height: 300px;
+margin: 10px;
+width: 250px;
+border-radius: 20px;
+box-shadow: rgba(73, 73, 73, 0.35) 0px 5px 15px;
+}
+.gallery-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 20px;
+}
+.gallery-wrapper .icon{
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    padding: 10px;
+    
+}
+
+
+
+/* Card Css */
+
+
+.cards-row{
+    display: flex;
+    padding: 0 25px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    justify-content: space-evenly;
+}
+.card{
+    cursor: pointer;
+    background-color: rgb(253, 253, 253);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    margin: 10px 0px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 280px;
+    height: fit-content;
+}
+.card-extra{
+    max-width: 280px;
+}
+.card-img{
+    height: 150px;
+    width: 280px;
+    border-radius: 20px;
+}
+.card-info{
+    display: flex;
+    flex-direction: column;
+    span{
+        padding: 2px 10px;
+        font-family: "Nunito Sans", sans-serif;
+    }
+}
+.card-location{
+    font-size: 14px;
+}
+.card-name, .card-price{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.card-btns .favbtn{
+    width: 45px!important;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+}
+.card-btns .btn-g1{
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 5px;
+
+    button{
+        width: 210px;
+    }
+}
+
+.card-btns{
+    padding: 10px;
+    align-items: flex-end;
+}
+.card-btns button{
+    padding: 10px 15px;
+    color: white;
+    background: black;
+    border: none;
+    width: 260px;
+    border-radius: 12px;
+}
+
+
+
+/**     */

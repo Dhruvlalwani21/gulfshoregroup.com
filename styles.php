@@ -5,4 +5,5 @@
 <link href="../first1.us/assets/css/responsive.css?v=<?php echo APPVERSION;?>" rel="stylesheet">
 <link href="../first1.us/assets/css/plugins/sweetalert.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="../first1.us/assets/css/pickadate.css" />
+<link rel="stylesheet" type="text/css" href="custom.css" />
 <script src="../first1.us/assets/js/jquery.min.js"></script>
