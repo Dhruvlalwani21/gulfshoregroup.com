@@ -44,122 +44,126 @@ if($Status == 'Active'){
 ?>
 
 
-<div class="col-lg-6 col-md-6 col-sm-12 fleft pl-0 dsply_inline_blck">
-<div class="match-height property-listing property-2">
 
-<div class="listing-img-wrapper h-100">
-	<?php echo $badge;?>
-	<div class="list-img-slide">
-		<div class="click">
-            <?php
-            if($AllPixList !=''){
-            $ecPix = explode(',',$AllPixList);
-            $pixCounter = 0;                                    
-            foreach($ecPix as $pix){
-                if($pix!='' && $pixCounter>0){
-                ?>
-				<div>
-                <a href="homes-for-sale/<?php echo $MLSNumber;?>/<?php echo $link;?>">
-                <img src="<?php echo $pix;?>" id="<?php echo $MLSNumber;?>" onerror="$(this).attr('src','https://via.placeholder.com/450x250.png?text=No+image+added+from+MLS')" class="img-fluid mx-auto" alt="" />
-                </a>
-                </div>                                            
-                <?php                                                                                   
-                }
-                $pixCounter++; 
-            }
-            }else{
-            ?>
-			<div>
-            <a href="homes-for-sale/<?php echo $MLSNumber;?>/<?php echo $link;?>">
-            <img src="<?php echo $DefaultPic;?>" id="<?php echo $MLSNumber;?>" onerror="$(this).attr('src','https://via.placeholder.com/450x250.png?text=No+image+added+from+MLS')" class="img-fluid mx-auto" alt="" />
-            </a>
-            </div>
-            <?php
-            }
-            ?>
-		</div>
-	</div>
-</div>
+<div class="col-lg-6 col-md-6 col-sm-10 xs-mb-15 sm-mb-15 fleft dsply_inline_blck sm-float_none">
+        				<div class="match-height property-listing property-2">
+        					
+        					<div class="listing-img-wrapper h-100">
+        						<?php echo $badge;?>
+        						<div class="list-img-slide">
+            						<div class="click">
+                                        <?php
+                                        if($AllPixList !=''){
+                                        $ecPix = explode(',',$AllPixList);
+                                        $counPix = count($ecPix);
+                                        if($counPix>2){
+                                            $sgt = 0;
+                                        }else{
+                                            $sgt = -1;
+                                        }
+                                        
+                                        $pixCounter = 0;                                    
+                                        foreach($ecPix as $pix){
+                                            if($pix!='' && $pixCounter>$sgt){
+                                            ?>
+                							<div>
+                                            <a href="javascript:;" data-href="<?php echo $MLSNumber;?>/<?php echo $link;?>">
+                                            <img src="<?php echo $pix;?>" id="<?php echo $MLSNumber;?>" loading="lazy" onerror="$(this).attr('src','https://via.placeholder.com/450x250.png?text=No+image+added+from+MLS')" class="img-fluid mx-auto card-img" alt="" />
+                                            </a>
+                                                       <div class="card-img-overlay">
+                                    <div class="btn fright like" onclick="addToFav('<?php echo $MLSNumber;?>')" id="add-to-fav-<?php echo $MLSNumber;?>" style="<?php echo $favDsply;?>">
+                       <i class="fa-regular fa-thumbs-up"></i>
+                                    </div>
+                                    </div>
+                                            </div>                                            
+                                            <?php                                                                                   
+                                            }    
+                                            $pixCounter++; 
+                                        }
+                                        }else{
+                                        ?>
+            							<div>
+                                        <a href="javascript:;" data-href="listings/<?php echo $MLSNumber;?>/<?php echo $link;?>">
+                                        <img src="<?php echo $DefaultPic;?>" loading="lazy" id="<?php echo $MLSNumber;?>" onerror="$(this).attr('src','https://via.placeholder.com/450x250.png?text=No+image+added+from+MLS')" class="img-fluid mx-auto card-img" alt="" />
+                                        </a>
+                                            <div class="card-img-overlay" >
+                                    <div class="btn fright like" onclick="addToFav('<?php echo $MLSNumber;?>')" id="add-to-fav-<?php echo $MLSNumber;?>" style="<?php echo $favDsply;?>">
+                       <i class="fa-regular fa-thumbs-up"></i>
+                                    </div>
+                                    </div>
+                                        </div>
+                                        <?php
+                                        }
+                                        ?>
+            						</div>
+                                    
+            					</div>
+                                
+        					</div>
 
-<div class="listing-detail-wrapper mt-1">
-	<div class="listing-short-detail-wrap">
-		<div class="_card_list_flex">
-			<div class="_card_flex_01">
-				<h4 class="listing-name verified">
-                <a href="homes-for-sale/<?php echo $MLSNumber;?>/<?php echo $link;?>" class="w-100 prt-link-detail">
-                <div class="w-100"><?php echo $SubCondoName;?></div>
-                <div class="w-100 fs-14 medium" style="color: #535353;"><?php echo $PropertyAddress;?></div>
-                </a>
-                </h4>
-			</div>
-		</div>
-		<div class="_card_list_flex  mb-1">
-			<div class="_card_flex_01">
-				<h6 class="listing-card-info-price mb-0 p-0" style="color: #0076AE;">$<?php echo number_format($CurrentPrice,0);?></h6> 
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="price-features-wrapper">
-	<div class="list-fx-features">
-		<div class="listing-card-info-icon">
-			<div class="inc-fleat-icon"><img src="assets/img/bed.svg" width="13" alt="" /></div><?php echo $BedsTotal;?> Beds
-		</div>
-		<div class="listing-card-info-icon">
-			<div class="inc-fleat-icon"><img src="assets/img/bathtub.svg" width="13" alt="" /></div><?php echo $BathsTotal;?> Baths
-		</div>
-		<div class="listing-card-info-icon">
-			<div class="inc-fleat-icon"><img src="assets/img/car.svg" width="13" alt="" /></div><?php echo $GarageSpaces;?> Car Garage
-		</div>
-		<div class="listing-card-info-icon">
-			<div class="inc-fleat-icon"><img src="assets/img/move.svg" width="13" alt="" /></div><?php echo number_format($TotalArea,0);?> sqft
-		</div>
-	</div>
-</div>
-
-<div class="listing-detail-footer"> 
-	<div class="w-100" id="listing_footer" style="left: 5px;">
-		<div class="col-12 p-0 mt-5 mb-5 fleft dsply_inline_blck">
-        
-        <div class="col-3 fleft p-10 dsply_inline_blck" onclick="addToFav('<?php echo $MLSNumber;?>')" id="add-to-fav-<?php echo $MLSNumber;?>" style="<?php echo $favDsply;?>">
-        <div class="btn fleft w-100" data-toggle="tooltip" title="Add To Favorites">
-        <i class="ti-thumb-up"></i>
-        </div>
-        </div>
-        
-        <div class="col-3 fleft p-10 dsply_inline_blck" onclick="remFrmFav('<?php echo $MLSNumber;?>')" id="rem-frm-fav-<?php echo $MLSNumber;?>" style="<?php echo $unfDsply;?>">
-        <div class="btn fleft w-100" style="background-color: #FF8484!important; color: white!important;" data-toggle="tooltip" title="Remove From Favorites">
-        <i class="ti-thumb-down"></i>
-        </div>
-        </div>
-        
-        <div class="add_rem_loader_<?php echo $MLSNumber;?> col-3 centered-text fleft p-10" style="display: none;">
-        <div class="btn fleft w-100"><img src="assets/img/loader.gif" class="float_none" style="width: 15px; height: 15px; cursor: pointer;" /></div>
-        </div>
-        
-        <span class="col-3 fleft p-10 dsply_inline_blck" onclick="openGetInfo('<?php echo $MLSNumber;?>')">
-        <div class="btn fleft w-100" data-toggle="tooltip" title="Get More Information">
-        <i class="ti-email"></i>
-        </div>
-        </span>
-        
-        <span class="col-3 fleft p-10 dsply_inline_blck" onclick="openTourModal('<?php echo $MLSNumber;?>')">
-        <div class="btn fleft w-100" data-toggle="tooltip" title="Schedule a Tour">
-        <i class="ti-alarm-clock"></i>
-        </div>
-        </span>
-        <span class="col-3 fleft p-10 dsply_inline_blck">
-        <a href="homes-for-sale/<?php echo $MLSNumber;?>/<?php echo $link;?>" class="btn fleft w-100" data-toggle="tooltip" title="View Details">
-        <i class="ti-eye"></i>
-        </a>
-        </span>
-        </div>
-	</div>
-</div>
-
-</div>
-</div>
+        					
+        					<div class="listing-detail-wrapper mt-1">
+        						<div class="listing-short-detail-wrap">
+        							<div class="_card_list_flex">
+        								<div class="_card_flex_01">
+        									<h4 class="listing-name verified">
+                                            <a href="listings/<?php echo $MLSNumber;?>/<?php echo $link;?>" class="w-100 prt-link-detail">
+                                            <div class="w-100"><?php echo $SubCondoName;?></div>
+                                            <div class="w-100 fs-14 medium" style="color: #535353;"><i class="ti-location-pin"></i> <?php echo $PropertyAddress;?></div>
+                                            </a>
+                                            </h4>
+        								</div>
+        							</div>
+        							<div class="_card_list_flex  mb-1">
+        								<div class="_card_flex_01">
+        									<h6 class="listing-card-info-price mb-0 p-0" style="color: #0076AE;">$<?php echo number_format($CurrentPrice,0);?></h6> 
+        								</div>
+        							</div>
+        						</div>
+        					</div>
+        					
+        					<div class="price-features-wrapper">
+        						<div class="list-fx-features">
+        							<div class="listing-card-info-icon">
+        								<div class="inc-fleat-icon"><img src="assets/img/bed.svg" width="13" alt="" /></div><?php echo $BedsTotal;?> Beds
+        							</div>
+        							<div class="listing-card-info-icon">
+        								<div class="inc-fleat-icon"><img src="assets/img/bathtub.svg" width="13" alt="" /></div><?php echo $BathsTotal;?> Baths
+        							</div>
+        							<div class="listing-card-info-icon">
+        								<div class="inc-fleat-icon"><img src="assets/img/car.svg" width="13" alt="" /></div><?php echo $GarageSpaces;?> Car Garage
+        							</div>
+        							<div class="listing-card-info-icon">
+        								<div class="inc-fleat-icon"><img src="assets/img/move.svg" width="13" alt="" /></div><?php echo number_format($TotalArea,0);?> sqft
+        							</div>
+        						</div>
+                                <div class=" w-100 fs-11 text-left">
+      								<?php echo $ListOfficeName;?>
+       							</div>
+        					</div>
+        					
+        					<div class="listing-detail-footer"> 
+        						<div class="w-100" id="listing_footer" style="left: 5px;">
+            						<div class="p-0 mt-5 mb-2">
+                                 
+                                    <div class="add_rem_loader_<?php echo $MLSNumber;?> col-3 centered-text fleft p-10" style="display: none;">
+                                    <div class="btn fleft w-100"><img src="assets/img/loader.gif" class="float_none" style="width: 15px; height: 15px; cursor: pointer;" /></div>
+                                    </div>
+                                    
+                                    <span class="p-2" onclick="openGetInfo('<?php echo $MLSNumber;?>')">
+                                    <a href="#" class="btn btn-primary btn-lg btn-block">Get Information</a>
+                                    </span>
+                                    
+                                    <span class="p-2" onclick="openTourModal('<?php echo $MLSNumber;?>')">
+          <a href="#" class="btn btn-primary btn-lg btn-block">Sechedule a Tour</a>
+                                    </span>
+                                   
+                                    </div>
+            					</div>
+        					</div>
+        					
+        				</div>
+        			</div>
 <?php
 }
 

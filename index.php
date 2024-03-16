@@ -17,17 +17,29 @@ $favoritesArray=json_decode($_SESSION['fav_ids'], true);
 <head>
 <meta name="google-site-verification" content="NYG8-9kV_iAx2C3tkjoLf1MdGsgIHssLU_7NQtWkiTs" />
 	<meta charset="utf-8" />
-	<meta name="author" content="Oluwapaso" />
+	<meta name="author" content="Dhruv Lalwani" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
 	<meta name="description" content="<?php echo $meta_description;?>"/>
-    
+    <link rel="manifest" href="manifest.json">
     <title><?php echo $page_title;?></title>
 	
-    <?php include_once 'styles.php';?>
+    <?php include_once 'styles.php';?>   
     <script type="text/javascript">
     var email = '<?php echo $logged_email;?>';
     var logged_email = email;
     </script>
+  
+      <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1VDEW2DPN8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1VDEW2DPN8');
+</script>
+   <!-- Google tag completed-->
+
 </head>
 
 <body class="yellow-skin">
@@ -35,7 +47,11 @@ $favoritesArray=json_decode($_SESSION['fav_ids'], true);
 	 <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
-   <div class="preloader"></div>
+<div class="d-flex justify-content-center">
+  <div class="spinner-border preloader" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
 	
     <!-- ============================================================== -->
     <!-- Main wrapper - style you can find in pages.scss -->
@@ -62,8 +78,8 @@ $favoritesArray=json_decode($_SESSION['fav_ids'], true);
 		
 		
 		<!-- ============================ Hero Banner  Start================================== -->
-		<div class="hero_banner image-cover" style="background:#f6f6f6 url(assets/img/south-florida-homes-for-sale-header.jpg) no-repeat; position: relative;" data-overlay="1">
-				<div style="position: absolute; background-color: rgba(0,0,0,0.25); top: 0; left: 0; bottom: 0; right: 0; z-index: 0;"></div>
+		<div class="hero_banner image-cover" style="background:#f6f6f6 url(assets/img/florida-2.jpg) no-repeat; position: relative;" data-overlay="1">
+				<div style="position: absolute; background-color: rgb(0 0 0 / 40%); top: 0; left: 0; bottom: 0; right: 0; z-index: 0;"></div>
                 <div class="container">
 					
 					<h2 class="font-normal text-center mb-1">
@@ -159,8 +175,8 @@ $favoritesArray=json_decode($_SESSION['fav_ids'], true);
 								        
                             <div class="col-12 mt-10 pl-0 xs-pr-0 relative" style="z-index: -1!important;">
                             <b class="fs-18">
-                            <a href="mls-search" class="btn p-10 pl-20 pr-10 xs-mw-100 xs-mb-15 xs-mt-10 xs-pr-0" style="background-color: #09AFFF; color: white;"><i class="ti-search fs-13"></i> Advanced MLS Search</a>
-                            <a class="btn p-10 pl-20 pr-10 ml-15 xs-mw-100 xs-ml-0" href="map-search.php?location=Any&mls_number=&min_price=&max_price=&property_type=&city=&zipcode=&beds=Any&baths=Any&min_sq_ft=&max_sq_ft=&min_year=Any&garage=Any&just_listed=&include_sold=&foreclosure=&short_sale=&pool=&spa=&guest_house=&waterfront=&sort=price-asc&gated=&sort=price-asc&page=1&pagination=get&dfltLat=&dfltLng=&aNord=&aEst=&aSud=&aOvest=&zoom=11" style="background-color: #09AFFF; color: white;"><i class="ti-location-pin fs-13"></i> Map Search</a>
+                            <a href="mls-search" class="btn p-10 pl-20 pr-10 xs-mw-100 xs-mb-15 xs-mt-10 xs-pr-0" style="background-color: #027cff; color: white;"><i class="ti-search fs-13"></i> Advanced MLS Search</a>
+                            <a class="btn p-10 pl-20 pr-10 ml-15 xs-mw-100 xs-ml-0" href="map-search.php?location=Any&communities=&mls_number=&min_price=&max_price=&property_type=&city=&zipcode=&beds=Any&baths=Any&min_sq_ft=&max_sq_ft=&min_year=Any&garage=Any&just_listed=&include_sold=&foreclosure=&short_sale=&pool=&spa=&guest_house=&waterfront=&sort=price-asc&gated=&gulf_access=&ref=&sort=price-asc&page=1&pagination=get&dfltLat=&dfltLng=&aNord=&aEst=&aSud=&aOvest=&zoom=11" style="background-color: #027cff; color: white;"><i class="ti-location-pin fs-13"></i> Map Search</a>
                             </b>
                             </div>	
 						</div>
@@ -173,18 +189,18 @@ $favoritesArray=json_decode($_SESSION['fav_ids'], true);
 		<!-- ============================ Our Awards Start ================================== -->
         
         
-		<section class="p-0 relative" style="z-index: 10!important;">
+		<section class="p-0 relative">
 			<div class="col-10 sm-col-12 xs-col-12" style="margin: auto; float: none; padding: 0px;">
 				<div class="row justify-content-center">
 					<div class="col-xl-12 col-lg-12 col-md-12 xs-pl-0 xs-pr-0">
 					
-						<div class="_awards_group fleft w-100" id="tabs" style="z-index: 10!important;">	
+						<div class="_awards_group fleft w-100" id="tabs">	
                         <h4 class="w-100 p-25 centered-text xs-pl-10 xs-pr-10">
                         <b><i class="ti-star"></i> Featured cities </b> <span style="font-weight: normal;">click city name for more information</span>
                         <div class="float_none m-auto mt-10" style="height: 5px; width: 120px; background-color: #09AFFF;"></div>
                         </h4>
 					        <nav class="w-100">
-            					<div class="nav nav-tabs nav-fill" class="w-100" id="nav-tab" role="tablist">
+            					<div class="nav nav-tabs nav-fill city-list" class="w-100" id="nav-tab" role="tablist">
                                     <?php
                                     $counter = 0;
                                     if($noNavCity>0){
@@ -206,7 +222,7 @@ $favoritesArray=json_decode($_SESSION['fav_ids'], true);
                                     ?>
             					</div>
             				</nav>
-            				<div class="tab-content fleft w-100 xs-pl-10 xs-pr-10" id="nav-tabContent">
+            				<div class="tab-content w-100 xs-pl-10 xs-pr-10" id="nav-tabContent">
                                 <?php
                                 $counterX = 0;
                                 foreach($cityData as $row){
@@ -225,10 +241,11 @@ $favoritesArray=json_decode($_SESSION['fav_ids'], true);
                                     $acitveX = '';
                                 }
                                 ?>
-            					<div class="tab-pane w-100 fleft fade show <?php echo $acitveX;?>" id="<?php echo $tabName_2;?>" role="tabpanel" aria-labelledby="<?php echo $tabName_2;?>-tab">
-            					<img src="admin/templates/cities/<?php echo $hdrImg;?>" onerror="$(this).attr('src','https://via.placeholder.com/450x250.png?text=No+community+image+added+yet')" style="float: left; height: 250px; width: auto; max-width: 100%; margin-right: 20px; margin-bottom: 1px;" />
-                                <p class="inner_cont" class="p-0 xs-fs-14"><?php echo $content;?></p>
-                                
+            					<div class=" tab-pane w-100 fade show <?php echo $acitveX;?>" id="<?php echo $tabName_2;?>" role="tabpanel" aria-labelledby="<?php echo $tabName_2;?>-tab">
+            				<div class="row align-items-center justify-content-between">
+                            <div class="fcidiv col-xl-5 col-lg-5 col-md-6 col-sm-12">	<img class="fcimg" src="admin/templates/cities/<?php echo $hdrImg;?>" loading="lazy" onerror="$(this).attr('src','https://via.placeholder.com/450x250.png?text=Failed+To+Load+Image')" style="float: left; margin-right: 20px; margin-bottom: 1px;" /></div>
+                          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">      <p class="inner_cont" class="p-0 xs-fs-14"><?php echo $content;?></p></div>
+                              </div>  
                                 <div class="w-100 fleft mt-20">
                                 <h3 class="w-100 centered-text xs-fs-20"> <?php echo $cityName;?> Communities</h3>
                                 <div class="float_none m-auto mt-10" style="height: 5px; width: 120px; background-color: #09AFFF;"></div>
@@ -244,8 +261,13 @@ $favoritesArray=json_decode($_SESSION['fav_ids'], true);
                                     $nameXpld = explode(':',$commWtNumb);
                                     if($commWtNumb!=""){
                                     $commName = $nameXpld[1];
+                                    
+
+                                $comname = preg_replace('#[^A-Za-z0-9]#', '-', $commName);
+
+
                                     echo '<div class="fleft dsply_inline_blck col-lg-3 col-md-6 xs-pl-0 xs-pr-0 fs-16 mb-15">
-                                    <a href="community/'.urlencode($commName).'/homes/price-asc/1" class="pb-5 ellipses-1-line" style="border-bottom: 1px dashed #09AFFF;"><i class="ti-angle-double-right" style="color: #09AFFF;"></i> '.$commName.'</a>
+                                    <a href="community/'.urlencode($comname).'/homes/price-asc/1" class="pb-5 ellipses-1-line" style="border-bottom: 1px dashed #09AFFF;"><i class="ti-angle-double-right" style="color: #09AFFF;"></i> '.$commName.'</a>
                                     </div>';
                                     }
                                     $ctCnt++;
@@ -299,7 +321,7 @@ $favoritesArray=json_decode($_SESSION['fav_ids'], true);
 					
 					<div class="col-xl-5 col-lg-5 col-md-6 col-sm-12">
 						<div class="text-center">
-							<img src="assets/img/florida-2.jpg" class="img-fluid shadow" alt="" />
+							<img src="assets/img/florida-2.jpg" loading="lazy" class="img-fluid shadow" alt="" />
 						</div>
 					</div>
                     
@@ -401,26 +423,38 @@ $favoritesArray=json_decode($_SESSION['fav_ids'], true);
                                             if($pix!='' && $pixCounter>$sgt){
                                             ?>
                 							<div>
-                                            <a href="javascript:;" data-href="homes-for-sale/<?php echo $MLSNumber;?>/<?php echo $link;?>">
-                                            <img src="<?php echo $pix;?>" id="<?php echo $MLSNumber;?>" onerror="$(this).attr('src','https://via.placeholder.com/450x250.png?text=No+image+added+from+MLS')" class="img-fluid mx-auto" alt="" />
+                                            <a href="javascript:;" data-href="<?php echo $MLSNumber;?>/<?php echo $link;?>">
+                                            <img src="<?php echo $pix;?>" id="<?php echo $MLSNumber;?>" loading="lazy" onerror="$(this).attr('src','https://via.placeholder.com/450x250.png?text=No+image+added+from+MLS')" class="img-fluid mx-auto card-img" alt="<?php echo $link;?>" />
                                             </a>
+                                                       <div class="card-img-overlay">
+                                    <div class="btn fright like" onclick="addToFav('<?php echo $MLSNumber;?>')" id="add-to-fav-<?php echo $MLSNumber;?>" style="<?php echo $favDsply;?>">
+                       <i class="fa-regular fa-thumbs-up"></i>
+                                    </div>
+                                    </div>
                                             </div>                                            
                                             <?php                                                                                   
-                                            }
+                                            }    
                                             $pixCounter++; 
                                         }
                                         }else{
                                         ?>
             							<div>
-                                        <a href="javascript:;" data-href="homes-for-sale/<?php echo $MLSNumber;?>/<?php echo $link;?>">
-                                        <img src="<?php echo $DefaultPic;?>" id="<?php echo $MLSNumber;?>" onerror="$(this).attr('src','https://via.placeholder.com/450x250.png?text=No+image+added+from+MLS')" class="img-fluid mx-auto" alt="" />
+                                        <a href="javascript:;" data-href="listings/<?php echo $MLSNumber;?>/<?php echo $link;?>">
+                                        <img src="<?php echo $DefaultPic;?>" loading="lazy" id="<?php echo $MLSNumber;?>" onerror="$(this).attr('src','https://via.placeholder.com/450x250.png?text=No+image+added+from+MLS')" class="img-fluid mx-auto card-img" alt="<?php echo $link;?>" />
                                         </a>
+                                            <div class="card-img-overlay" >
+                                    <div class="btn fright like" onclick="addToFav('<?php echo $MLSNumber;?>')" id="add-to-fav-<?php echo $MLSNumber;?>" style="<?php echo $favDsply;?>">
+                       <i class="fa-regular fa-thumbs-up"></i>
+                                    </div>
+                                    </div>
                                         </div>
                                         <?php
                                         }
                                         ?>
             						</div>
+                                    
             					</div>
+                                
         					</div>
 
         					
@@ -429,7 +463,7 @@ $favoritesArray=json_decode($_SESSION['fav_ids'], true);
         							<div class="_card_list_flex">
         								<div class="_card_flex_01">
         									<h4 class="listing-name verified">
-                                            <a href="homes-for-sale/<?php echo $MLSNumber;?>/<?php echo $link;?>" class="w-100 prt-link-detail">
+                                            <a href="listings/<?php echo $MLSNumber;?>/<?php echo $link;?>" class="w-100 prt-link-detail">
                                             <div class="w-100"><?php echo $SubCondoName;?></div>
                                             <div class="w-100 fs-14 medium" style="color: #535353;"><i class="ti-location-pin"></i> <?php echo $PropertyAddress;?></div>
                                             </a>
@@ -466,40 +500,20 @@ $favoritesArray=json_decode($_SESSION['fav_ids'], true);
         					
         					<div class="listing-detail-footer"> 
         						<div class="w-100" id="listing_footer" style="left: 5px;">
-            						<div class="col-12 p-0 mt-5 mb-5 fleft dsply_inline_blck">
-                                    
-                                    <div class="col-3 fleft p-10 dsply_inline_blck" onclick="addToFav('<?php echo $MLSNumber;?>')" id="add-to-fav-<?php echo $MLSNumber;?>" style="<?php echo $favDsply;?>">
-                                    <div class="btn fleft w-100" data-toggle="tooltip" title="Add To Favorites">
-                                    <i class="ti-thumb-up"></i>
-                                    </div>
-                                    </div>
-                                    
-                                    <div class="col-3 fleft p-10 dsply_inline_blck" onclick="remFrmFav('<?php echo $MLSNumber;?>')" id="rem-frm-fav-<?php echo $MLSNumber;?>" style="<?php echo $unfDsply;?>">
-                                    <div class="btn fleft w-100" style="background-color: #FF8484!important; color: white!important;" data-toggle="tooltip" title="Remove From Favorites">
-                                    <i class="ti-thumb-down"></i>
-                                    </div>
-                                    </div>
-                                    
+            						<div class="p-0 mt-5 mb-2">
+                                 
                                     <div class="add_rem_loader_<?php echo $MLSNumber;?> col-3 centered-text fleft p-10" style="display: none;">
                                     <div class="btn fleft w-100"><img src="assets/img/loader.gif" class="float_none" style="width: 15px; height: 15px; cursor: pointer;" /></div>
                                     </div>
                                     
-                                    <span class="col-3 fleft p-10 dsply_inline_blck" onclick="openGetInfo('<?php echo $MLSNumber;?>')">
-                                    <div class="btn fleft w-100" data-toggle="tooltip" title="Get More Information">
-                                    <i class="ti-email"></i>
-                                    </div>
+                                    <span class="p-2" onclick="openGetInfo('<?php echo $MLSNumber;?>')">
+                                    <a href="#" class="btn btn-primary btn-lg btn-block">Get Information</a>
                                     </span>
                                     
-                                    <span class="col-3 fleft p-10 dsply_inline_blck" onclick="openTourModal('<?php echo $MLSNumber;?>')">
-                                    <div class="btn fleft w-100" data-toggle="tooltip" title="Schedule a Tour">
-                                    <i class="ti-alarm-clock"></i>
-                                    </div>
+                                    <span class="p-2" onclick="openTourModal('<?php echo $MLSNumber;?>')">
+          <a href="#" class="btn btn-primary btn-lg btn-block">Sechedule a Tour</a>
                                     </span>
-                                    <span class="col-3 fleft p-10 dsply_inline_blck">
-                                    <a href="homes-for-sale/<?php echo $MLSNumber;?>/<?php echo $link;?>" class="btn fleft w-100" data-toggle="tooltip" title="View Details">
-                                    <i class="ti-eye"></i>
-                                    </a>
-                                    </span>
+                                   
                                     </div>
             					</div>
         					</div>
@@ -562,7 +576,7 @@ $favoritesArray=json_decode($_SESSION['fav_ids'], true);
 			
 				<div class="col-xl-5 col-lg-5 col-md-6 col-sm-12 order-md-1 order-2">
 					<div class="text-center">
-						<img src="assets/img/balance-work-home-illustration-tiny.jpg" class="img-fluid" alt="" style="max-height: 300px;" />
+						<img src="assets/img/balance-work-home-illustration-tiny.jpg" loading="lazy" class="img-fluid" alt="" style="max-height: 300px;" />
 					</div>
 				</div>
 				
@@ -640,7 +654,7 @@ $favoritesArray=json_decode($_SESSION['fav_ids'], true);
 										</div>
 										<div class="_testimonial_flex_first_last">
 											<div class="_tsl_flex_thumb">
-												<img src="assets/img/c-1.png" class="img-fluid" alt="">
+												<img src="assets/img/c-1.png"  loading="lazy"  class="img-fluid" alt="">
 											</div>
 										</div>
 									</div>
@@ -664,7 +678,7 @@ $favoritesArray=json_decode($_SESSION['fav_ids'], true);
 										</div>
 										<div class="_testimonial_flex_first_last">
 											<div class="_tsl_flex_thumb">
-												<img src="assets/img/c-1.png" class="img-fluid" alt="">
+												<img src="assets/img/c-1.png"  loading="lazy" class="img-fluid" alt="">
 											</div>
 										</div>
 									</div>
@@ -712,7 +726,7 @@ $favoritesArray=json_decode($_SESSION['fav_ids'], true);
 										</div>
 										<div class="_testimonial_flex_first_last">
 											<div class="_tsl_flex_thumb">
-												<img src="assets/img/c-1.png" class="img-fluid" alt="">
+												<img src="assets/img/c-1.png"  loading="lazy" class="img-fluid" alt="">
 											</div>
 										</div>
 									</div>
@@ -795,7 +809,7 @@ $favoritesArray=json_decode($_SESSION['fav_ids'], true);
     
     
         // Configure/customize these variables.
-        var showChar = 500;  // How many characters are shown by default
+        var showChar = 200;  // How many characters are shown by default
         var ellipsestext = "...";
         var moretext = "Show more...";
         var lesstext = "Show less";

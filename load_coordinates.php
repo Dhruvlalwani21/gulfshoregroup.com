@@ -311,15 +311,6 @@ if(($min_price!='Any' && $min_price!='') && ($max_price=='Any' || $max_price==''
 } 
 
 
-if(($min_sq_ft!='Any' && $min_sq_ft!='') || ($max_sq_ft!='Any' && $max_sq_ft!='')){
-if(($min_sq_ft!='Any' && $min_sq_ft!='') && ($max_sq_ft=='Any' || $max_sq_ft=='')){
- $qry_lot_size=" AND TotalArea>=$min_sq_ft"; 
-}else if(($min_sq_ft=='Any' || $min_sq_ft=='') && ($max_sq_ft!='Any' && $max_sq_ft!='')){
- $qry_lot_size=" AND TotalArea<=$max_sq_ft"; 
-}else if(($min_sq_ft!='Any' && $min_sq_ft!='') && ($max_sq_ft!='Any' && $max_sq_ft!='')){
- $qry_lot_size=" AND (TotalArea>=$min_sq_ft AND TotalArea<=$max_sq_ft)";   
-}  
-}
 
 
 if($min_year!='Any' && $min_year!=''){ 

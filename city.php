@@ -1,8 +1,32 @@
 <?php
 include 'connect.php';
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+error_reporting(1);  
+
+
+
 if(isset($_GET['slug'])){
+
 $slug = $_GET['slug'];
+
+
+
+}else{
+$url=$_SERVER['REQUEST_URI'];
+
+$urlarr=explode('/', $url);
+
+if($urlarr[2]){
+$slug=$urlarr[2];
+}
+
+}
+
+if($slug){
+
 
 
 $selCity = "SELECT * FROM cities WHERE slug='$slug'";  
@@ -40,41 +64,24 @@ if($noComm>0){
 }else{
     $restlArray=array('data'=>'Error: no community found in this city.');
 }
-/**
-name	varchar(100)	utf8mb4_general_ci		Yes	NULL			Change Change	Drop Drop	
-More More
-	3	slug	varchar(255)	utf8mb4_general_ci		Yes	NULL			Change Change	Drop Drop	
-More More
-	4	page_title	varchar(255)	utf8mb4_general_ci		Yes	NULL			Change Change	Drop Drop	
-More More
-	5	meta_description	text	utf8mb4_general_ci		Yes				Change Change	Drop Drop	
-More More
-	6	content	longtext	utf8mb4_general_ci		Yes				Change Change	Drop Drop	
-More More
-	7	communities	longtext	utf8mb4_general_ci		Yes				Change Change	Drop Drop	
-More More
-	8	header_img	text	utf8mb4_general_ci		Yes				Change Change	Drop Drop	
-More More
-	9	header_thumb
- **/
+
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 	<meta charset="utf-8" />
-    <base href="/" />
 	<meta name="author" content="Oluwapaso" />
+     <base href="/" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
 	<meta name="description" content="<?php echo $meta_description;?>"/>
     
-    <title><?php echo $page_title;?></title>
+    <title>Gulf Shore Group | <?php echo $page_title;?></title>
 	
     <?php include_once 'styles.php';?>
+ 
 </head>
-
 <body class="yellow-skin">
 
     <!-- ============================================================== -->
@@ -280,11 +287,11 @@ More More
                 <h4 class="w-100 centered-text fs-17"><?php echo $name;?> Real Estate</h4>
                 
                 <div class="totalsNav w-100"> 
-                <a href="search.php?location=Any&mls_number=&min_price=&max_price=&property_type=&city=<?php echo $name;?>&zipcode=&beds=Any&baths=Any&min_sq_ft=&max_sq_ft=&min_year=Any&garage=Any&just_listed=&include_sold=&foreclosure=&short_sale=&pool=&spa=&guest_house=&waterfront=&gated=&pagination=get&page=1" rel="nofollow"> 
+                <a href="search.php?location=Any&mls_number=&min_price=&max_price=&property_type=&city=<?php echo $name;?>&zipcode=&beds=Any&baths=Any&min_sq_ft=&max_sq_ft=&min_year=Any&garage=Any&just_listed=&include_sold=&foreclosure=&short_sale=&pool=&spa=&guest_house=&waterfront=&gated=&communities=&gulf_access=&ref=quick&sort=price-desc&pagination=get&page=1" rel="nofollow"> 
                 <span class="on">Homes For Sale</span><span class="to"><?php echo $homes_for_sale;?></span> 
                 </a> 
-                
-                <a href="search.php?location=Any&mls_number=&min_price=&max_price=&property_type=Condos&city=<?php echo $name;?>&zipcode=&beds=&baths=Any&min_sq_ft=&max_sq_ft=&min_year=Any&garage=Any&just_listed=&include_sold=&foreclosure=&short_sale=&pool=&spa=&guest_house=&waterfront=&gated=&pagination=get&page=1" rel="nofollow"> 
+                <!-- search.php?location=Any&mls_number=&min_price=Any&max_price=Any&property_type=&city=&zipcode=&beds=Any&baths=Any&min_sq_ft=&max_sq_ft=&min_year=Any&garage=Any&just_listed=&include_sold=&foreclosure=&short_sale=&pool=&spa=&guest_house=&waterfront=&gated=&communities=&gulf_access=&ref=quick&sort=price-asc&pagination=get&page=1 -->
+                <a href="search.php?location=Any&mls_number=&min_price=&max_price=&property_type=Condos&city=<?php echo $name;?>&zipcode=&beds=&baths=Any&min_sq_ft=&max_sq_ft=&min_year=Any&garage=Any&just_listed=&include_sold=&foreclosure=&short_sale=&pool=&spa=&guest_house=&waterfront=&gated=&communities=&gulf_access=&ref=quick&sort=price-desc&pagination=get&page=1" rel="nofollow"> 
                 <span class="on">Condos For Sale</span><span class="to"><?php echo $condos_for_sale;?></span> 
                 </a> 
                 
@@ -395,11 +402,11 @@ More More
 </html>
 <?php
 }else{
-    echo '<script type="text/javascript">window.location.href="/";</script>';  
+ echo '<script type="text/javascript">window.location.href="/";</script>';
 }
 
 
 }else{
-    echo '<script type="text/javascript">window.location.href="/";</script>';  
+   echo '<script type="text/javascript">window.location.href="/";</script>';
 }
 ?>

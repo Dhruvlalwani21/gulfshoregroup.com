@@ -28,6 +28,7 @@ $spa=$_GET["spa"];
 $guest_house=$_GET["guest_house"];
 $waterfront=$_GET["waterfront"];    
 $gated=$_GET["gated"];
+$communities=$_GET["communities"];
 $gulf_access=$_GET["gulf_access"];
 $ref=$_GET["ref"];
 $sort_by=$_GET["sort"];
@@ -347,10 +348,10 @@ if($xmls_number==''){
         }
     }
     
-    if($property_type=='Land' && $property_type=='Dock'){
-      $query=$final_loc_qry.$qry_type.$qry_min_max_pri_join.$qry_lot_size.$qry_year_built.$qry_jst_listed.$qry_status.$qry_foreclsre.$qry_ss.$qry_waterfrnt.$qry_gated.$gulf_access; 
+    if($property_type=='Land' || $property_type=='Dock'){
+      $query=$final_loc_qry.$qry_type.$qry_min_max_pri_join.$qry_year_built.$qry_jst_listed.$qry_status.$qry_foreclsre.$qry_ss.$qry_waterfrnt.$qry_gated.$gulf_access; 
     }else{
-      $query=$final_loc_qry.$qry_type.$qry_beds.$qry_baths.$qry_garage.$qry_min_max_pri_join.$qry_lot_size.$qry_year_built.$qry_jst_listed.$qry_status.$qry_foreclsre.$qry_ss.$qry_pool.$qry_spa.$qry_gee_house.$qry_waterfrnt.$qry_gated.$gulf_access;
+      $query=$final_loc_qry.$qry_type.$qry_beds.$qry_baths.$qry_garage.$qry_min_max_pri_join.$qry_year_built.$qry_jst_listed.$qry_status.$qry_foreclsre.$qry_ss.$qry_pool.$qry_spa.$qry_gee_house.$qry_waterfrnt.$qry_gated.$gulf_access;
     }
     
     
@@ -452,20 +453,18 @@ if($cityFound>0){
         }
         }
 }
-}    
-/**
-$sqlTTL = "SELECT COUNT(MLSNumber) AS total_records FROM properties WHERE $query"; 
-$ttlRslt = mysqli_query($conn,$sqlTTL); 
-$rowQ = mysqli_fetch_assoc($ttlRslt); 
-$total_records = $rowQ['total_records'];
+}   
+//$sqlTTL = "SELECT COUNT(MLSNumber) AS total_records FROM properties WHERE $query"; 
+//$ttlRslt = mysqli_query($conn,$sqlTTL); 
+//$rowQ = mysqli_fetch_assoc($ttlRslt); 
+//$total_records = $rowQ['total_records'];
 
-$start_from = ($page-1) * $limit;
-$toSel = 'matrix_unique_id, MLSNumber, BathsTotal, BedsTotal, City, CurrentPrice, GarageSpaces, Longitude,Latitude, PropertyAddress, Status, SubCondoName, TotalArea, DefaultPic, AllPixList';
-$sqlPpty = "SELECT $toSel FROM properties WHERE $query ORDER BY $orderCase $order_by LIMIT $start_from, $limit"; //
-$pptyRslt = mysqli_query($conn,$sqlPpty) or die(mysqli_error($conn));
-$noProperties = mysqli_num_rows($pptyRslt);
-**/
-$mapData='{"properties": []}';
+//$start_from = ($page-1) * $limit;
+//$toSel = 'matrix_unique_id, MLSNumber, BathsTotal, BedsTotal, City, CurrentPrice, GarageSpaces, Longitude,Latitude, PropertyAddress, Status, SubCondoName, TotalArea, DefaultPic, AllPixList';
+//$sqlPpty = "SELECT $toSel FROM properties WHERE $query ORDER BY $order_by LIMIT $start_from, $limit"; //
+//$pptyRslt = mysqli_query($conn,$sqlPpty) or die(mysqli_error($conn));
+//$noProperties = mysqli_num_rows($pptyRslt);
+//$mapData='{"properties": []}';
 ?>
 
 <!DOCTYPE html>
@@ -544,7 +543,9 @@ $mapData='{"properties": []}';
             <style type="text/css">
             .static-logo{display: none!important; opacity: 0!important; width: 0px!important; height: 0px!important; }
             </style>
-				<?php include_once 'nav.php'; ?>
+				<?php
+  $itsHome="";
+  include_once 'nav.php'; ?>
 			</div>
 		</div>
 		<!-- End Navigation -->

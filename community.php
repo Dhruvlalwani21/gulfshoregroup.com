@@ -57,13 +57,28 @@ if ( $precision > 0 ) {
 return $n_format.$suffix;
 }
 
-if(isset($_GET['slug']) && isset($_GET['type']) && isset($_GET['sort'])){
-$slug = $_GET['slug'];
-$sort_by=$_GET["sort"];
-$property_type = strtolower($_GET['type']);
-$page=$_GET['page'];
+$url = $_SERVER['REQUEST_URI'];
+
+$urlarr=explode('/', $url);
+
+if($urlarr[1] && $urlarr[2] && $urlarr[3] && $urlarr[4]){
+
+$slug=$urlarr[2];
+$type=$urlarr[3];
+$sort=$urlarr[4];
+
+if($urlarr[5]){
+$page=$urlarr[5];
+}
+}else{
+ echo '<script type="text/javascript">window.location.href="/";</script>';  
+}
+
+if($slug && $type && $sort){
+$sort_by=$sort;
+$property_type = strtolower($type);
 $limit = 16;
-$pageNumber = intval($_GET['page']);
+$pageNumber = intval($page);
 
 $selComm = "SELECT * FROM all_communities WHERE name='$slug'";  
 $comRslts = mysqli_query($conn,$selComm);  
@@ -157,7 +172,7 @@ $query=$qry_loc.$qry_type;
 
 
 $sqlTTL = "SELECT COUNT(MLSNumber) AS total_records FROM properties WHERE $query"; 
-$ttlRslt = mysqli_query($conn,$sqlTTL) or die(mysqli_error($conn));; 
+$ttlRslt = mysqli_query($conn,$sqlTTL) or die(mysqli_error($conn));
 $rowQ = mysqli_fetch_assoc($ttlRslt); 
 $total_records = $rowQ['total_records'];
 
