@@ -674,16 +674,16 @@ return;
         					<div class="price-features-wrapper">
         						<div class="list-fx-features">
         							<div class="listing-card-info-icon">
-        								<div class="inc-fleat-icon"><img src="assets/img/bed.svg" width="13" alt="" /></div><?php echo $BedsTotal;?> Beds
+        								<div class="inc-fleat-icon"><img src="../first1.us/assets/img/bed.svg" width="13" alt="" /></div><?php echo $BedsTotal;?> Beds
         							</div>
         							<div class="listing-card-info-icon">
-        								<div class="inc-fleat-icon"><img src="assets/img/bathtub.svg" width="13" alt="" /></div><?php echo $BathsTotal;?> Baths
+        								<div class="inc-fleat-icon"><img src="../first1.us/assets/img/bathtub.svg" width="13" alt="" /></div><?php echo $BathsTotal;?> Baths
         							</div>
         							<div class="listing-card-info-icon">
-        								<div class="inc-fleat-icon"><img src="assets/img/car.svg" width="13" alt="" /></div><?php echo $GarageSpaces;?> Car Garage
+        								<div class="inc-fleat-icon"><img src="../first1.us/assets/img/car.svg" width="13" alt="" /></div><?php echo $GarageSpaces;?> Car Garage
         							</div>
         							<div class="listing-card-info-icon">
-        								<div class="inc-fleat-icon"><img src="assets/img/move.svg" width="13" alt="" /></div><?php echo number_format($TotalArea,0);?> sqft
+        								<div class="inc-fleat-icon"><img src="../first1.us/assets/img/move.svg" width="13" alt="" /></div><?php echo number_format($TotalArea,0);?> sqft
         							</div>
         						</div>
                                 <div class=" w-100 fs-11 text-left">
@@ -696,7 +696,7 @@ return;
             						<div class="p-0 mt-5 mb-2">
                                  
                                     <div class="add_rem_loader_<?php echo $MLSNumber;?> col-3 centered-text fleft p-10" style="display: none;">
-                                    <div class="btn fleft w-100"><img src="assets/img/loader.gif" class="float_none" style="width: 15px; height: 15px; cursor: pointer;" /></div>
+                                    <div class="btn fleft w-100"><img src="../first1.us/assets/img/loader.gif" class="float_none" style="width: 15px; height: 15px; cursor: pointer;" /></div>
                                     </div>
                                     
                                     <span class="p-2" onclick="openGetInfo('<?php echo $MLSNumber;?>')">
@@ -808,7 +808,7 @@ return;
 		<!-- ============================================================== -->
     <?php include('footer.php');?>  
     
-   <script src="assets/js/PaginationForPath.js" type="text/javascript"></script>
+   <script src="../first1.us/assets/js/PaginationForPath.js" type="text/javascript"></script>
     <script type="text/javascript">
     
     var Location='<?php echo $location;?>';

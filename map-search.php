@@ -519,7 +519,7 @@ if($cityFound>0){
         history.pushState(null, null, newURL);
     }
     </script>
-    <link href="assets/css/jsonPagination.css" rel="stylesheet"/>
+    <link href="../first1.us/assets/css/jsonPagination.css" rel="stylesheet"/>
 </head>
 
 <body class="yellow-skin">
@@ -568,7 +568,7 @@ if($cityFound>0){
             <span id="no_listing_fnd"></span> listings found
             </div>
             
-            <div id="map_loader"><img src="assets/img/loader.gif" /></div>
+            <div id="map_loader"><img src="../first1.us/assets/img/loader.gif" /></div>
         	</div>
         </div>
         </div>
@@ -613,11 +613,11 @@ if($cityFound>0){
     <style type="text/css">footer{ display: none!important; height: 0px!important; }</style>
     <?php include_once 'footer.php';?>  
     
-    <script src="assets/js/jsonPagination.js?v=<?php echo APPVERSION;?>" type="text/javascript"></script>
+    <script src="../first1.us/assets/js/jsonPagination.js?v=<?php echo APPVERSION;?>" type="text/javascript"></script>
 	<!-- Map -->
 	<script src="https://maps.google.com/maps/api/js?key=<?php echo WEBMAPAPI;?>&sensor=false&libraries=places,drawing&dummy=.js"></script><!-- AIzaSyAhslYaXxH3ycFvxtw6bIifl0D6K_Y4DYk -->
-    <script src="assets/js/markerwithlabel.js" type="text/javascript"></script>
-    <script src="assets/js/markerclusterer.js" type="text/javascript"></script>
+    <script src="../first1.us/assets/js/markerwithlabel.js" type="text/javascript"></script>
+    <script src="../first1.us/assets/js/markerclusterer.js" type="text/javascript"></script>
         
     <script type="text/javascript">
     /** used in speed_test.js **/
@@ -688,7 +688,7 @@ if($cityFound>0){
     
     </script>
     
-    <script src="assets/js/speed_test.js?v=<?php echo APPVERSION;?>"></script>
+    <script src="../first1.us/assets/js/speed_test.js?v=<?php echo APPVERSION;?>"></script>
     
     <script type="text/javascript">
         google.maps.event.addDomListener(window, 'load', speedTest.init);

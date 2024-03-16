@@ -7,7 +7,7 @@
 		
 		<div class="col-lg-5 col-md-5">
 			<div class="footer_widget">
-				<img src="assets/img/mvp-realty-logo.png" style="height: 65px; width: auto;" class="img-footer small mb-2" alt="First1 south florida real estate" />
+				<img src="../first1.us/assets/img/mvp-realty-logo.png" style="height: 65px; width: auto;" class="img-footer small mb-2" alt="First1 south florida real estate" />
 				<h4 class="extream mb-3">Sign up for newsletter</h4>
                 <p>We'll never spam or sell your details. You can unsubscribe whenever you'd like.</p>
 				<div class="foot-news-last">
@@ -139,26 +139,26 @@ if(Notification.permission === 'granted'){
   });
 
 </script>
-<script src="assets/js/popper.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script  src="assets/js/ion.rangeSlider.min.js"></script>
-<script  src="assets/js/magnific-popup.min.js"></script>
-<script  src="assets/js/slick.js"></script>
+<script src="../first1.us/assets/js/popper.min.js"></script>
+<script src="../first1.us/assets/js/bootstrap.min.js"></script>
+<script  src="../first1.us/assets/js/ion.rangeSlider.min.js"></script>
+<script  src="../first1.us/assets/js/magnific-popup.min.js"></script>
+<script  src="../first1.us/assets/js/slick.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/fontawesome.min.js"></script>
-<script  src="assets/js/slider-bg.js"></script>
-<script  src="assets/js/lightbox.js"></script> 
-<script  src="assets/js/imagesloaded.js"></script>
-<script  src="assets/js/daterangepicker.js"></script>
-<script src="assets/js/custom.js?v=<?php echo APPVERSION;?>"></script>
-<script  src="assets/js/notify.js"></script>
-<script  src="assets/js/match-height.js" type="text/javascript"></script>
-<script  src="assets/js/sweetalert.min.js"></script>
-<script  src="assets/js/picker.js" type="text/javascript"></script>
-<script  src="assets/js/picker.date.js" type="text/javascript"></script>
-<script  src="assets/js/picker.time.js" type="text/javascript"></script>
-<script  src="assets/js/moment-with-locales.min.js" type="text/javascript"></script>
-<script src="assets/js/scripts.js?v=<?php echo APPVERSION;?>"></script>
+<script  src="../first1.us/assets/js/slider-bg.js"></script>
+<script  src="../first1.us/assets/js/lightbox.js"></script> 
+<script  src="../first1.us/assets/js/imagesloaded.js"></script>
+<script  src="../first1.us/assets/js/daterangepicker.js"></script>
+<script src="../first1.us/assets/js/custom.js?v=<?php echo APPVERSION;?>"></script>
+<script  src="../first1.us/assets/js/notify.js"></script>
+<script  src="../first1.us/assets/js/match-height.js" type="text/javascript"></script>
+<script  src="../first1.us/assets/js/sweetalert.min.js"></script>
+<script  src="../first1.us/assets/js/picker.js" type="text/javascript"></script>
+<script  src="../first1.us/assets/js/picker.date.js" type="text/javascript"></script>
+<script  src="../first1.us/assets/js/picker.time.js" type="text/javascript"></script>
+<script  src="../first1.us/assets/js/moment-with-locales.min.js" type="text/javascript"></script>
+<script src="../first1.us/assets/js/scripts.js?v=<?php echo APPVERSION;?>"></script>
 <!-- ============================================================== -->
 <!-- This page plugins -->
 <!-- ============================================================== -->
