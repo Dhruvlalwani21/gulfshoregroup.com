@@ -23,10 +23,10 @@ define('FBAPPSECRET','8088455fa7bd64322caec2d13d78d222'); //8088455fa7bd64322cae
 
 
 error_reporting(1);
-$conn = mysqli_connect("db5013859389.hosting-data.io","dbu1470512","Immokalee_34142","dbs11591428");
+//$conn = mysqli_connect("db5013859389.hosting-data.io","dbu1470512","Immokalee_34142","dbs11591428");
 //$conn = mysqli_connect("localhost","u110616855_hybrid_pro","J#i1qwPNBQ","u110616855_real_estate");
 //$conn = mysqli_connect("db5013225696.hosting-data.io","dbu2802442","J#i1qwPNBQ","dbs11095202");
-
+$conn = mysqli_connect('localhost','Dimitri','$Florida_239','dbs11591428');
 // Check connection
 if(mysqli_connect_errno()){
    //echo "Failed to connect to MySQL: ".mysqli_connect_error();
