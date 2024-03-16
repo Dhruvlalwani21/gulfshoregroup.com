@@ -617,7 +617,7 @@ return;
                                             ?>
                 							<div>
                                             <a href="javascript:;" data-href="<?php echo $MLSNumber;?>/<?php echo $link;?>">
-                                            <img src="<?php echo $pix;?>" id="<?php echo $MLSNumber;?>" loading="lazy" onerror="$(this).attr('src','https://via.placeholder.com/450x250.png?text=No+image+added+from+MLS')" class="img-fluid mx-auto card-img" alt="" />
+                                            <img src="../first1.us/<?php echo $pix;?>" id="<?php echo $MLSNumber;?>" loading="lazy" onerror="$(this).attr('src','https://via.placeholder.com/450x250.png?text=No+image+added+from+MLS')" class="img-fluid mx-auto card-img" alt="" />
                                             </a>
                                                        <div class="card-img-overlay">
                                     <div class="btn fright like" onclick="addToFav('<?php echo $MLSNumber;?>')" id="add-to-fav-<?php echo $MLSNumber;?>" style="<?php echo $favDsply;?>">
@@ -633,7 +633,7 @@ return;
                                         ?>
             							<div>
                                         <a href="javascript:;" data-href="listings/<?php echo $MLSNumber;?>/<?php echo $link;?>">
-                                        <img src="<?php echo $DefaultPic;?>" loading="lazy" id="<?php echo $MLSNumber;?>" onerror="$(this).attr('src','https://via.placeholder.com/450x250.png?text=No+image+added+from+MLS')" class="img-fluid mx-auto card-img" alt="" />
+                                        <img src="../first1.us/<?php echo $DefaultPic;?>" loading="lazy" id="<?php echo $MLSNumber;?>" onerror="$(this).attr('src','https://via.placeholder.com/450x250.png?text=No+image+added+from+MLS')" class="img-fluid mx-auto card-img" alt="" />
                                         </a>
                                             <div class="card-img-overlay" >
                                     <div class="btn fright like" onclick="addToFav('<?php echo $MLSNumber;?>')" id="add-to-fav-<?php echo $MLSNumber;?>" style="<?php echo $favDsply;?>">
