@@ -1,10 +1,12 @@
 <?php
 include 'connect.php';
 $page = 'home';
-$favoritesArray=json_decode($_SESSION['fav_ids'], true);
+$favoritesArray = json_decode($_SESSION['fav_ids'], true);
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-if(isset($_GET['location']) && isset($_GET['property_type']) && isset($_GET['page']) && isset($_GET['pagination'])){
+$resultsArray = []; // Initialize an empty array to store property results
+
+if (isset($_GET['location']) && isset($_GET['property_type']) && isset($_GET['page']) && isset($_GET['pagination'])) {
 
 $xmls_number=$_GET["mls_number"];
 $location=filterThis($_GET["location"],$conn);
@@ -96,39 +98,7 @@ if($zipcode!='Any' && $zipcode!=''){
 
 
 if($property_type!='Any' && $property_type!=''){
-  
-  /**
-  $expld=explode(',',$property_type); 
-  $pptyTypCnt=1;
-  $ppty_qry='';
-  foreach($expld as $pptyType){
-    if($pptyType!=''){
-      if($pptyTypCnt>1){
-        $or=' OR ';
-        $open="(";
-        $close=")";
-      }else{
-        $or='';
-        $open="";
-        $close="";
-      }
-      
-      if($pptyType!='Rental Investments' && $pptyType!='Land/Lot' && $pptyType!='Manufactured On Land' && $pptyType!='Rooms for Rent'){
-      $ppty_qry.= " $or PropertySubType='$pptyType' ";
-      }else if($pptyType=='Land/Lot'){
-      $ppty_qry.= " $or PropertyClass='Land' ";
-      }else if($pptyType=='Manufactured On Land'){
-      $ppty_qry.= " $or PropertyClass='ManufacturedInPark' ";
-      }else if($pptyType=='Rental Investments'){
-      $ppty_qry.= " $or PropertyClass='ResidentialIncome' ";
-      }else if($pptyType=='Rooms for Rent'){
-      $ppty_qry.= " $or PropertyClass='ResidentialLease' ";
-      }
-      
-      $pptyTypCnt++;
-    }
-  }
-  **/
+
   if($property_type=='Homes'){
   $ppty_qry = " PropertyClass='RES' ";
   }else if($property_type=='Condos'){
@@ -466,6 +436,18 @@ $pptyRslt = mysqli_query($conn,$sqlPpty) or die(mysqli_error($conn));
 $noProperties = mysqli_num_rows($pptyRslt);
 
 $mapData='{"properties": []}';
-echo json_encode($pptyRslt);
+
+
+
+
+
+
+    // Loop through the fetched property data and store it in the $resultsArray
+    while ($row = mysqli_fetch_assoc($pptyRslt)) {
+        $resultsArray[] = $row;
+    }
 }
+
+// Return the array of property results
+echo json_encode($resultsArray);
 ?>

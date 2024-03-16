@@ -167,6 +167,39 @@ $toSel = 'matrix_unique_id, MLSNumber, BathsTotal, BedsTotal, City, CurrentPrice
 $sqlPpty = "SELECT $toSel FROM properties WHERE $query ORDER BY $orderCase $order_by LIMIT $start_from, $limit"; //
 $pptyRslt = mysqli_query($conn,$sqlPpty) or die(mysqli_error($conn));
 $noProperties = mysqli_num_rows($pptyRslt);
+
+$resproperties = array();
+    while ($rowM = mysqli_fetch_assoc($pptyRslt)) {
+        $resproperties[] = array(
+            'matrix_unique_id' => $rowM['matrix_unique_id'],
+            'MLSNumber' => $rowM['MLSNumber'],
+            'BathsTotal' => $rowM['BathsTotal'],
+            'BedsTotal' => $rowM['BedsTotal'],
+            'City' => $rowM['City'],
+            'CurrentPrice' => $rowM['CurrentPrice'],
+            'GarageSpaces' => $rowM['GarageSpaces'],
+            'PropertyAddress' => $rowM['PropertyAddress'],
+            'Status' => $rowM['Status'],
+            'SubCondoName' => $rowM['SubCondoName'],
+            'TotalArea' => $rowM['TotalArea'],
+            'DefaultPic' => $rowM['DefaultPic'],
+            'AllPixList' => $rowM['AllPixList'],
+            'MatrixModifiedDT' => $rowM['MatrixModifiedDT'],
+            'other_fields_json' => $rowM['other_fields_json']
+        );
+    }
+
+    // Prepare response array
+    $response = array(
+        'properties' => $resproperties,
+        'total_records' => $total_records
+    );
+
+    // Encode response as JSON and output
+    echo json_encode($response);
+
+
+
 }else{
     echo "No Communities Found"  ;
 }
