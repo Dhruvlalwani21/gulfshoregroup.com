@@ -682,18 +682,12 @@ return;
       								<?php echo $ListOfficeName;?>
        							</div>
         					</div>
-        					
-        					<div class="listing-detail-footer"> 
-        						<div class="w-100" id="listing_footer" style="left: 5px;">
-                    <div className="card-btns">
+                  <div className="card-btns">
     <div className="btn-g1">  
     <button className='card-btn'  onclick="openGetInfo('<?php echo $MLSNumber;?>')" >Contact us</button>
       <button className='card-btn favbtn'  onclick="addToFav('<?php echo $MLSNumber;?>')" id="add-to-fav-<?php echo $MLSNumber;?>" style="<?php echo $favDsply;?>"  ><i class="fa-regular fa-heart"></i></button></div>
       <button className='card-btn' onclick="openTourModal('<?php echo $MLSNumber;?>')">Schedule Tour</button>
   </div>
-            					</div>
-        					</div>
-        					
         				</div>
         			</div>
                     <!-- Single Property Ends -->
