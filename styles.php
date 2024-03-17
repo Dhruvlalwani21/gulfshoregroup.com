@@ -20,4 +20,5 @@
 <link rel="stylesheet" href="../first1.us/assets/css/plugins/flaticon.css">
 <link rel="stylesheet" href="../first1.us/assets/css/plugins/ion.rangeSlider.min.css">
 <link rel="stylesheet" type="text/css" href="../first1.us/assets/css/pickadate.css" />
+<link rel="stylesheet" type="text/css" href="/custom.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
