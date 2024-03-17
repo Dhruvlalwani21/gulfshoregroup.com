@@ -619,11 +619,7 @@ return;
                                             <a href="javascript:;" data-href="<?php echo $MLSNumber;?>/<?php echo $link;?>">
                                             <img src="../first1.us/<?php echo $pix;?>" id="<?php echo $MLSNumber;?>" loading="lazy" onerror="$(this).attr('src','https://via.placeholder.com/450x250.png?text=No+image+added+from+MLS')" class="img-fluid mx-auto card-img" alt="" />
                                             </a>
-                                                       <div class="card-img-overlay">
-                                    <div class="btn fright like" onclick="addToFav('<?php echo $MLSNumber;?>')" id="add-to-fav-<?php echo $MLSNumber;?>" style="<?php echo $favDsply;?>">
-                       <i class="fa-regular fa-thumbs-up"></i>
-                                    </div>
-                                    </div>
+                                                     
                                             </div>                                            
                                             <?php                                                                                   
                                             }    
@@ -635,11 +631,7 @@ return;
                                         <a href="javascript:;" data-href="listings/<?php echo $MLSNumber;?>/<?php echo $link;?>">
                                         <img src="../first1.us/<?php echo $DefaultPic;?>" loading="lazy" id="<?php echo $MLSNumber;?>" onerror="$(this).attr('src','https://via.placeholder.com/450x250.png?text=No+image+added+from+MLS')" class="img-fluid mx-auto card-img" alt="" />
                                         </a>
-                                            <div class="card-img-overlay" >
-                                    <div class="btn fright like" onclick="addToFav('<?php echo $MLSNumber;?>')" id="add-to-fav-<?php echo $MLSNumber;?>" style="<?php echo $favDsply;?>">
-                       <i class="fa-regular fa-thumbs-up"></i>
-                                    </div>
-                                    </div>
+                                          
                                         </div>
                                         <?php
                                         }
@@ -656,7 +648,7 @@ return;
         							<div class="_card_list_flex">
         								<div class="_card_flex_01">
         									<h4 class="listing-name verified">
-                                            <a href="listings/<?php echo $MLSNumber;?>/<?php echo $link;?>" class="w-100 prt-link-detail">
+                                            <a href="<?php echo $MLSNumber;?>/<?php echo $link;?>" class="w-100 prt-link-detail">
                                             <div class="w-100"><?php echo $SubCondoName;?></div>
                                             <div class="w-100 fs-14 medium" style="color: #535353;"><i class="ti-location-pin"></i> <?php echo $PropertyAddress;?></div>
                                             </a>
@@ -693,21 +685,12 @@ return;
         					
         					<div class="listing-detail-footer"> 
         						<div class="w-100" id="listing_footer" style="left: 5px;">
-            						<div class="p-0 mt-5 mb-2">
-                                 
-                                    <div class="add_rem_loader_<?php echo $MLSNumber;?> col-3 centered-text fleft p-10" style="display: none;">
-                                    <div class="btn fleft w-100"><img src="../first1.us/assets/img/loader.gif" class="float_none" style="width: 15px; height: 15px; cursor: pointer;" /></div>
-                                    </div>
-                                    
-                                    <span class="p-2" onclick="openGetInfo('<?php echo $MLSNumber;?>')">
-                                    <a href="#" class="btn btn-primary btn-lg btn-block">Get Information</a>
-                                    </span>
-                                    
-                                    <span class="p-2" onclick="openTourModal('<?php echo $MLSNumber;?>')">
-          <a href="#" class="btn btn-primary btn-lg btn-block">Sechedule a Tour</a>
-                                    </span>
-                                   
-                                    </div>
+                    <div className="card-btns">
+    <div className="btn-g1">  
+    <button className='card-btn'  onclick="openGetInfo('<?php echo $MLSNumber;?>')" >Contact us</button>
+      <button className='card-btn favbtn'  onclick="addToFav('<?php echo $MLSNumber;?>')" id="add-to-fav-<?php echo $MLSNumber;?>" style="<?php echo $favDsply;?>"  ><i class="fa-regular fa-heart"></i></button></div>
+      <button className='card-btn' onclick="openTourModal('<?php echo $MLSNumber;?>')">Schedule Tour</button>
+  </div>
             					</div>
         					</div>
         					
