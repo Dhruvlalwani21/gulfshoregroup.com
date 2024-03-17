@@ -595,7 +595,7 @@ return;
                     ?>
         			<!-- Single Property -->
         		   <div class="col-lg-6 col-md-6 col-sm-10 xs-mb-15 sm-mb-15 fleft dsply_inline_blck sm-float_none">
-        				<div class="match-height property-listing property-2">
+        				<div class="card match-height property-listing property-2">
         					
         					<div class="listing-img-wrapper h-100">
         						<?php echo $badge;?>
@@ -645,21 +645,13 @@ return;
         					
         					<div class="listing-detail-wrapper mt-1">
         						<div class="listing-short-detail-wrap">
-        							<div class="_card_list_flex">
-        								<div class="_card_flex_01">
-        									<h4 class="listing-name verified">
-                                            <a href="<?php echo $MLSNumber;?>/<?php echo $link;?>" class="w-100 prt-link-detail">
-                                            <div class="w-100"><?php echo $SubCondoName;?></div>
-                                            <div class="w-100 fs-14 medium" style="color: #535353;"><i class="ti-location-pin"></i> <?php echo $PropertyAddress;?></div>
-                                            </a>
-                                            </h4>
-        								</div>
-        							</div>
-        							<div class="_card_list_flex  mb-1">
-        								<div class="_card_flex_01">
-        									<h6 class="listing-card-info-price mb-0 p-0" style="color: #0076AE;">$<?php echo number_format($CurrentPrice,0);?></h6> 
-        								</div>
-        							</div>
+                       <div className="card-info">
+      <span className='card-name'><a class="prt-link-detail" href=""><?php echo $SubCondoName;?></a></span>
+      <span className='card-location'><i class="ti-location-pin"></i> <?php echo $PropertyAddress;?></span>
+      <span className='card-price'>$<?php echo number_format($CurrentPrice,0);?></span>
+      <div className="card-extra"></div>
+  </div>
+        			
         						</div>
         					</div>
         					
